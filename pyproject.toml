@@ -1,0 +1,29 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+known_django = ["django", "rest_framework"]
+line_length = 100
+profile = "black"
+sections = "FUTURE,STDLIB,DJANGO,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+
+[tool.poetry]
+name = "be"
+version = "0.1.0"
+description = ""
+authors = ["AdachiTetsuya <1019born@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.1"
+django-cors-headers = "^4.0.0"
+djangorestframework = "^3.14.0"
+python-dotenv = "^1.0.0"
+pre-commit = "^3.3.2"
+
+
