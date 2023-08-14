@@ -17,3 +17,11 @@
     ALLOWED_HOSTS=127.0.0.1,localhost
     CORS_ALLOWED_ORIGINS=http://127.0.0.1:5173,http://localhost:5173
     ```
+
+4. データベースの作成
+
+    ```
+    python manage.py migrate
+    ```
+
+    AbstractUser を継承させた User モデルを定義してマイグレーションファイルを作成してあるので、api の User テーブルも作成される
