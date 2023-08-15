@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import User, Chapter, Card, PaymentLog
+from api.models import User, Chapter, Card, PurchaseLog
 
 class ChapterSerializer(serializers.ModelSerializer):
     is_locked = serializers.BooleanField(default=True, required=False)
@@ -22,3 +22,7 @@ class CardSerializer(serializers.ModelSerializer):
         model = Card
         exclude = ("user",)
 
+class PurchaseLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PurchaseLog
+        exclude = ("user",)

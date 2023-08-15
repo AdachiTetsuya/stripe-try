@@ -35,7 +35,7 @@ class Card(models.Model):
         verbose_name = "カード情報"
 
 
-class PaymentLog(models.Model):
+class PurchaseLog(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, verbose_name="ユーザー", null=True, blank=True
     )
