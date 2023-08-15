@@ -1,7 +1,12 @@
-from django.urls import path
+from django.urls import path, include
+from api.views import ChapterViewSet, CardViewSet
+from rest_framework import routers
 
-from . import views
+router = routers.DefaultRouter()
+
+router.register("chapters", ChapterViewSet, basename="chapters")
+router.register("cards", CardViewSet, basename="cards")
 
 urlpatterns = [
-    path("index", views.index, name="index"),
+    path("", include(router.urls)),
 ]

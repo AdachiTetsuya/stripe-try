@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import User
+from api.models import User, Chapter, Card, PaymentLog
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 # Register your models here.
@@ -20,3 +20,19 @@ class UserAdmin(BaseUserAdmin):
             {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")},
         ),
     )
+
+@admin.register(Chapter)
+class ChapterAdmin(admin.ModelAdmin):
+    list_display = ["id", "title", "is_free", "price"]
+
+
+@admin.register(Card)
+class CardAdmin(admin.ModelAdmin):
+    list_display = ["id", "user"]
+
+    
+@admin.register(PaymentLog)
+class PaymentLogAdmin(admin.ModelAdmin):
+    list_display = ["id", "user", "chapter", "price", "created_at"]
+
+
