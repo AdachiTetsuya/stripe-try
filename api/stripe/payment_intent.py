@@ -6,7 +6,6 @@ from .stripe_err_handler import stripe_error_handler
 
 @stripe_method
 def create_payment_intent(amount, currency="jpy", confirm=False, **kwargs):
-    print(kwargs)
     try:
         payment_intent = stripe.PaymentIntent.create(
             amount=amount,
